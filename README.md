@@ -1,3 +1,4 @@
 # RemindMe
  Reminder Chrome Extension
- In progess
+ 
+ In development
