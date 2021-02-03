@@ -1,13 +1,16 @@
 
-	localStorage.setItem("count",0);
-	const incCount = ()=>{
-		var count = parseInt(localStorage.getItem("count"))+1;
-		localStorage.setItem("count",count.toString());
-		if(count%1000 == 0){
-			//alert("Working"); //really works!
-		}
+const checkReminder = ()=>{
+	const timestamp = Math.floor(Date.now()/1000).toString();
+	const msg = localStorage.getItem(timestamp);
+	//console.log(Math.floor(Date.now()/1000));
+	if(msg !== null){
+		alert(msg);
+		localStorage.removeItem(timestamp);
 	}
-	setInterval(()=>{
-		1000, incCount();
-	})
+}
+
+setInterval(()=>{
+	1000, checkReminder();
+})
+
 

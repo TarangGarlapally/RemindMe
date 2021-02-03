@@ -2,10 +2,39 @@
 <html>
 <head>
 	<title>Testing</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Latest compiled JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
 </head>
-<body>
-<p>Tarang</p>
-<p id="count"></p>
+<body class="container" style="height:auto;width: auto;padding:20px;background-image: url('https://cdn.pixabay.com/photo/2018/01/21/13/03/time-3096535_960_720.jpg');background-size: cover;">
+<div style="background: rgba(0, 0, 0, 0.6);padding:15px;">
+<p id="now"></p>
+<div class="header">
+<h2 style="color:white;">Rem!ndMe</h2>
+<p style="color:white;"><i>You don't have to miss things!</i></p>
+</div>
+
+<hr />
+
+<div >
+<form id="form" action="">
+	<label for="msg" class="form-label" style="color:white;">Set Message</label>
+	<input class = "form-control msg" type="text" id="msg" placeholder="Notify me of..." required="true"  maxlength="40"/>
+	<br />
+	<label for="date" class="form-label" style="color:white;">Select date and time</label>
+	<input class="form-control date" type="datetime-local" id="date" required="true">
+	<br />
+	<input class="btn btn-primary" type="submit" id="submit"  value="Set Reminder"/>
+</form>
+</div>
+
+</div>
 <script src="popup.js"></script>
+
+
+
+
 </body>
 </html>
