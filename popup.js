@@ -3,13 +3,28 @@
 
 document.getElementById("form").addEventListener("submit", (e) => {setReminder();});
 
+document.getElementById("form").addEventListener("input", (e) => {validateInput(e);});
 
 function setReminder(){
 	console.log("Setting");
 	var timestamp = Math.floor(+ new Date(document.getElementById("date").value)/1000);
 	
-	localStorage.setItem(timestamp.toString(),document.getElementById("msg").value);
+	if(localStorage.getItem(timestamp) == null){
+		localStorage.setItem(timestamp.toString(),document.getElementById("msg").value);
+	}
+	else{
+		localStorage.setItem(timestamp.toString(), localStorage.getItem(timestamp)+"$"+document.getElementById("msg").value);
+	}
+	
 
 	//localStorage.setItem("Date", Math.floor(Date.now()/1000));
 	alert("Done!");
+}
+
+function validateInput(e){
+	var str = e.target.value;
+	console.log(str.slice(-1));
+	if(str.slice(-1) == "$"){
+		document.getElementById("msg").value = str.substring(0, str.length - 1);
+	}
 }
