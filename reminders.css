@@ -1,0 +1,29 @@
+body{
+	margin: 5px;
+}
+
+.reminderTile {
+	padding: 15px; 
+	background-color: ghostwhite; 
+	margin: 4px;
+	width: 98%;
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 5px;
+	border: 1px solid dimgray;
+}
+
+.reminderMessage {
+	margin-top: 10px;
+	font-size: medium;
+	float: left;
+	user-select: none;
+	width: 75%;
+}
+
+.reminderOptions {
+	float: right;
+	width: 25%;
+	height: 20px;
+	background-color: yellow;
+}
