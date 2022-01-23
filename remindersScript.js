@@ -1,4 +1,3 @@
-alert("hi");
 
 function parseTime(hours, minutes) { 
     var meridian = "";
@@ -34,7 +33,7 @@ for(i = 0; i<listOfTimestamps.length; i++){
     x = listOfTimestamps[i];
     const date = new Date(parseInt(x)*1000);
     const dateTime = date.getDate()+'/'+(date.getMonth()+1)+'/'+date.getFullYear() + " &nbsp;&nbsp;" + parseTime(date.getHours(), date.getMinutes());
-    document.getElementById("allRemindersBox").innerHTML += "<div id = '"+x+"' class = 'reminderTile'><p class = 'reminderMessage'><span class='glyphicon glyphicon-calendar'></span> &nbsp;"+dateTime+"&nbsp;&nbsp;&nbsp;&nbsp;"+localStorage[x]+"</p><p class = 'reminderOptions'></p></div>";
+    document.getElementById("allRemindersBox").innerHTML += "<div id = '"+x+"' class = 'reminderTile'><p class = 'reminderMessage'><i class='fas fa-calendar-alt calendarIcon'></i> &nbsp;<span class='dateTime'>"+dateTime+"</span>&nbsp;&nbsp;&nbsp;&nbsp;"+localStorage[x]+"</p><div class = 'reminderOptions'><i class='fas fa-window-close iconButton'></i><i class='fas fa-edit iconButton editIcon'></i></div></div>";
     
     
     console.log(document.getElementById(x))

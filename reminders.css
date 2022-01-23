@@ -3,7 +3,7 @@ body{
 }
 
 .reminderTile {
-	padding: 15px; 
+	padding: 10px; 
 	background-color: ghostwhite; 
 	margin: 4px;
 	width: 98%;
@@ -25,5 +25,46 @@ body{
 	float: right;
 	width: 25%;
 	height: 20px;
-	background-color: yellow;
 }
+
+.iconButton {
+	font-size: 24px;
+	padding: 12px;
+	margin-left: 15px;
+	margin-top: 8px;
+	background-color: #3F3F3F;
+	border-radius: 50%;
+	box-shadow: 5px grey;
+	color: whitesmoke;
+	float: right;
+	transition: 0.2s ease;
+}
+
+.editIcon {
+	padding-left: 16px;
+	padding-right: 8px;
+}
+
+.iconButton:hover {
+	transform: scale(1.2);
+	color: darkgrey;
+	background-color: white;
+	border: 1px solid;
+}
+
+.calendarIcon {
+	font-size: 24px;
+	padding: 12px;
+	margin-right: 5px;
+	margin-top: -3px;
+	background-color: #3F3F3F;
+	border-radius: 50%;
+	box-shadow: 5px grey;
+	color: whitesmoke;
+}
+
+.dateTime {
+	background-color: blue;
+	padding: 14px;
+}
+

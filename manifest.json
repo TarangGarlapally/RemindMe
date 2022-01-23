@@ -11,5 +11,4 @@
     "scripts": ["helper.js"],
     "persistent": true
   }
-
 }
