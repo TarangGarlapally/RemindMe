@@ -1,18 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Rem!ndMe</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Rem!ndMe - All Reminders</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/fontawesome.js"></script>
 	<link rel="stylesheet" type="text/css" href="reminders.css">
 </head>
 <body>
-<h2>All Reminders</h2>
-<div id = "allRemindersBox"></div>
-<script src="remindersScript.js"></script>
+	<div class="container-fluid">
+		<!-- Header Section -->
+		<div class="header-section">
+			<div class="row align-items-center">
+				<div class="col-12">
+					<h1 class="main-title">
+						<i class="fas fa-bell text-primary"></i>
+						Rem!ndMe
+					</h1>
+					<p class="subtitle">Manage your reminders</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Stats Section -->
+		<div class="stats-section">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="stat-card">
+						<div class="stat-icon">
+							<i class="fas fa-clock"></i>
+						</div>
+						<div class="stat-content">
+							<h3 id="totalReminders">0</h3>
+							<p>Total Reminders</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="stat-card">
+						<div class="stat-icon">
+							<i class="fas fa-calendar-day"></i>
+						</div>
+						<div class="stat-content">
+							<h3 id="todayReminders">0</h3>
+							<p>Today's Reminders</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="stat-card">
+						<div class="stat-icon">
+							<i class="fas fa-calendar-week"></i>
+						</div>
+						<div class="stat-content">
+							<h3 id="weekReminders">0</h3>
+							<p>This Week</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Reminders Section -->
+		<div class="reminders-section">
+			<div class="section-header">
+				<h2><i class="fas fa-list"></i> All Reminders</h2>
+				<div class="search-box">
+					<input type="text" id="searchInput" class="form-control" placeholder="Search reminders...">
+				</div>
+			</div>
+			
+			<div id="allRemindersBox" class="reminders-container">
+				<!-- Reminders will be loaded here -->
+			</div>
+		</div>
+
+		<!-- Empty State -->
+		<div id="emptyState" class="empty-state" style="display: none;">
+			<div class="empty-icon">
+				<i class="fas fa-bell-slash"></i>
+			</div>
+			<h3>No Reminders Yet</h3>
+			<p>You haven't set any reminders yet. Click the extension icon to create your first reminder!</p>
+		</div>
+	</div>
+
+	<script src="remindersScript.js"></script>
 </body>
 </html>

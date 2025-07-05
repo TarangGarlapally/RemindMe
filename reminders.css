@@ -1,70 +1,384 @@
-body{
-	margin: 5px;
+/* Modern Rem!ndMe CSS - Beautiful Design */
+
+/* Global Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	min-height: 100vh;
+	color: #333;
+	line-height: 1.6;
+}
+
+.container-fluid {
+	padding: 0;
+}
+
+/* Header Section */
+.header-section {
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	padding: 2rem 2rem 1.5rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #2c3e50;
+	margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.main-title i {
+	color: #667eea;
+	font-size: 2.2rem;
+}
+
+.subtitle {
+	color: #7f8c8d;
+	font-size: 1.1rem;
+	margin: 0;
+}
+
+/* Stats Section */
+.stats-section {
+	padding: 2rem;
+}
+
+.stat-card {
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	padding: 1.5rem;
+	text-align: center;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	transition: all 0.3s ease;
+	margin-bottom: 1rem;
+}
+
+.stat-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+	width: 60px;
+	height: 60px;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 1rem;
+	color: white;
+	font-size: 1.5rem;
+}
+
+.stat-content h3 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #2c3e50;
+	margin-bottom: 0.5rem;
+}
+
+.stat-content p {
+	color: #7f8c8d;
+	font-size: 0.9rem;
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* Reminders Section */
+.reminders-section {
+	padding: 0 2rem 2rem;
+}
+
+.section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2rem;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.section-header h2 {
+	color: white;
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.section-header h2 i {
+	color: #f39c12;
+}
+
+.search-box {
+	flex: 1;
+	max-width: 400px;
+}
+
+.search-box input {
+	border-radius: 25px;
+	border: none;
+	padding: 0.75rem 1.5rem;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+	outline: none;
+	box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+	transform: translateY(-2px);
+}
+
+.reminders-container {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+/* Reminder Cards */
 .reminderTile {
-	padding: 10px; 
-	background-color: ghostwhite; 
-	margin: 4px;
-	width: 98%;
-	display: inline-block;
-	cursor: pointer;
-	border-radius: 5px;
-	border: 1px solid dimgray;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	padding: 1.5rem;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.reminderTile::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.reminderTile:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .reminderMessage {
-	margin-top: 10px;
-	font-size: medium;
-	float: left;
-	user-select: none;
-	width: 75%;
-}
-
-.reminderOptions {
-	float: right;
-	width: 25%;
-	height: 20px;
-}
-
-.iconButton {
-	font-size: 24px;
-	padding: 12px;
-	margin-left: 15px;
-	margin-top: 8px;
-	background-color: #3F3F3F;
-	border-radius: 50%;
-	box-shadow: 5px grey;
-	color: whitesmoke;
-	float: right;
-	transition: 0.2s ease;
-}
-
-.editIcon {
-	padding-left: 16px;
-	padding-right: 8px;
-}
-
-.iconButton:hover {
-	transform: scale(1.2);
-	color: darkgrey;
-	background-color: white;
-	border: 1px solid;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	color: #2c3e50;
+	line-height: 1.6;
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
 }
 
 .calendarIcon {
-	font-size: 24px;
-	padding: 12px;
-	margin-right: 5px;
-	margin-top: -3px;
-	background-color: #3F3F3F;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	color: white;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
-	box-shadow: 5px grey;
-	color: whitesmoke;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+	flex-shrink: 0;
+	margin-top: 0.2rem;
+}
+
+.reminder-content {
+	flex: 1;
 }
 
 .dateTime {
-	background-color: blue;
-	padding: 14px;
+	background: linear-gradient(135deg, #3498db, #2980b9);
+	color: white;
+	padding: 0.5rem 1rem;
+	border-radius: 15px;
+	font-size: 0.85rem;
+	font-weight: 600;
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.reminder-text {
+	color: #34495e;
+	font-weight: 500;
+	margin-top: 0.5rem;
+}
+
+.reminderOptions {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: flex-end;
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.iconButton {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	color: white;
+}
+
+.iconButton.delete-btn {
+	background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.iconButton.edit-btn {
+	background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.iconButton:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Empty State */
+.empty-state {
+	text-align: center;
+	padding: 4rem 2rem;
+	color: white;
+}
+
+.empty-icon {
+	font-size: 4rem;
+	color: rgba(255, 255, 255, 0.7);
+	margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+.empty-state p {
+	font-size: 1.1rem;
+	opacity: 0.9;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.header-section {
+		padding: 1.5rem 1rem 1rem;
+	}
+	
+	.main-title {
+		font-size: 2rem;
+	}
+	
+	.stats-section {
+		padding: 1rem;
+	}
+	
+	.reminders-section {
+		padding: 0 1rem 1rem;
+	}
+	
+	.section-header {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	
+	.search-box {
+		max-width: none;
+	}
+	
+	.reminders-container {
+		grid-template-columns: 1fr;
+	}
+	
+	.reminderTile {
+		padding: 1rem;
+	}
+}
+
+/* Loading Animation */
+.loading {
+	text-align: center;
+	padding: 2rem;
+	color: white;
+}
+
+.loading::after {
+	content: '';
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 3px solid rgba(255, 255, 255, 0.3);
+	border-radius: 50%;
+	border-top-color: white;
+	animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.reminderTile {
+	animation: fadeIn 0.5s ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
 }
 

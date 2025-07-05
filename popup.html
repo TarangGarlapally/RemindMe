@@ -1,38 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Testing</title>
+	<title>RemindMe</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-
-	<!-- Latest compiled JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="popup.css">
 </head>
-<body class="container" style="height:auto;width: auto;padding:20px;background-image: url('https://cdn.pixabay.com/photo/2018/01/21/13/03/time-3096535_960_720.jpg');background-size: cover;">
-<div style="background: rgba(0, 0, 0, 0.6);padding:15px;">
-<p id="now"></p>
-<div class="header">
-<h2 style="color:white;">Rem!ndMe</h2>
-<p style="color:white;"><i>You don't have to miss things!</i></p>
-</div>
+<body>
+	<div class="popup-container">
+		<!-- Header Section -->
+		<div class="header-section">
+			<div class="header-content">
+				<div class="logo-section">
+					<div class="logo-icon">
+						<i class="fas fa-bell"></i>
+					</div>
+					<div class="logo-text">
+						<h1>RemindMe</h1>
+						<p>Never miss a thing!</p>
+					</div>
+				</div>
+				<div class="current-time" id="now">
+					<!-- Current time will be inserted here -->
+				</div>
+			</div>
+		</div>
 
-<hr />
+		<!-- Form Section -->
+		<div class="form-section">
+			<form id="form" class="reminder-form">
+				<div class="form-group">
+					<label for="msg" class="form-label">
+						<i class="fas fa-sticky-note"></i>
+						Reminder Message
+					</label>
+					<input 
+						class="form-control" 
+						type="text" 
+						id="msg" 
+						placeholder="What do you want to be reminded of?" 
+						required="true" 
+						maxlength="50"
+					/>
+					<div class="char-counter">
+						<span id="charCount">0</span>/50
+					</div>
+				</div>
 
-<div >
-<form id="form" action="">
-	<label for="msg" class="form-label" style="color:white;">Set Message</label>
-	<input class = "form-control msg" type="text" id="msg" placeholder="Notify me of..." required="true"  maxlength="40"/>
-	<br />
-	<label for="date" class="form-label" style="color:white;">Select date and time</label>
-	<input class="form-control date" type="datetime-local" id="date" required="true">
-	<br />
-	<input class="btn btn-primary" type="submit" id="submit"  value="Set Reminder"/>
-</form>
-<p><a href="reminders.html" target="_blank">View all reminders</a></p>
-</div>
+				<div class="form-group">
+					<label for="date" class="form-label">
+						<i class="fas fa-calendar-alt"></i>
+						Date & Time
+					</label>
+					<input 
+						class="form-control" 
+						type="datetime-local" 
+						id="date" 
+						required="true"
+					/>
+				</div>
 
-</div>
-<script src="popup.js"></script>
+				<button type="submit" class="submit-btn" id="submit">
+					<i class="fas fa-plus"></i>
+					Set Reminder
+				</button>
+			</form>
+		</div>
 
+		<!-- Quick Actions -->
+		<div class="quick-actions">
+			<a href="reminders.html" target="_blank" class="view-reminders-btn">
+				<i class="fas fa-list"></i>
+				View All Reminders
+			</a>
+		</div>
+
+		<!-- Success Message -->
+		<div id="successMessage" class="success-message" style="display: none;">
+			<i class="fas fa-check-circle"></i>
+			<span>Reminder set successfully!</span>
+		</div>
+	</div>
+
+	<script src="js/bootstrap.min.js"></script>
+	<script src="popup.js"></script>
 </body>
 </html>
