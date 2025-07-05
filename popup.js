@@ -1,4 +1,4 @@
-// Popup script for RemindMe Extension
+// Popup script for Rem!ndMe Extension
 // Updated for beautiful modern design
 
 document.addEventListener('DOMContentLoaded', function() {

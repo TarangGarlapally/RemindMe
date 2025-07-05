@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "RemindMe",
+  "name": "Rem!ndMe",
   "version": "1.0",
   "description": "A simple reminder extension to help you never miss important things!",
   "permissions": [
